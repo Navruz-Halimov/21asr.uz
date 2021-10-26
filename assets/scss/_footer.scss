@@ -1,0 +1,215 @@
+.footer {
+  background: $blackish;
+  width: 100%;
+
+  footer.pc {
+    .header-info {
+      @extend %fullWidth;
+      padding: 32px $padding15;
+
+      h2 {
+        font-family: $Montserrat;
+        font-size: 18px;
+        @extend %fontColor;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-family: $Montserrat;
+        font-size: 16px;
+        text-transform: capitalize;
+
+        a {
+          color: #c4c4c4;
+        }
+      }
+
+      .column-1 {
+        .logo {
+          width: 130px;
+          display: table;
+          text-decoration: none !important;
+
+          span {
+            @extend %fontColor;
+            font-family: $Impact;
+            font-size: 25px;
+            text-transform: uppercase;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+          }
+        }
+
+        p {
+          color: $white;
+          font-size: 12px;
+          font-family: $Montserrat;
+          margin-top: 12px;
+
+          a {
+            text-decoration: underline;
+            color: $white;
+
+            &:hover {
+              color: $white;
+            }
+          }
+
+          &:last-child {
+            margin-top: 30px;
+          }
+        }
+      }
+
+      .column-4 {
+        .social {
+          margin-top: 34px;
+          text-align: center;
+
+          .icons {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: inline-block;
+            margin-left: 36px;
+          }
+
+          .eighteen {
+            background: #c50000;
+            position: relative;
+            display: inline-block;
+
+            span {
+              font-size: 18px;
+              font-weight: 600;
+              font-family: "Arial", "Helvetica", sans-serif;
+              color: white;
+              @extend %center;
+            }
+          }
+
+          .facebook {
+            background: $linear;
+            position: relative;
+
+            svg {
+              @extend %center;
+              font-size: 28px;
+
+              path {
+                fill: $blackish;
+              }
+            }
+          }
+
+          .telegram {
+            background: $linear;
+            position: relative;
+
+            svg {
+              @extend %center;
+              font-size: 28px;
+
+              path {
+                fill: $blackish;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .line {
+      width: 100%;
+      height: 2px;
+      background: $linear;
+      margin-top: 43px;
+    }
+
+    .footer-info {
+      @extend %fullWidth;
+      padding: 32px $padding15;
+
+      .info-wrapper {
+        max-width: 620px;
+        width: 100%;
+        display: block;
+        margin: auto;
+
+        p {
+          color: $white;
+          font-family: $Montserrat;
+          font-size: 12px;
+          margin: 40px 0px 8px;
+          font-style: normal;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  footer.mobile {
+    .column-1 {
+      .social {
+        margin-top: 34px;
+        text-align: center;
+
+        .icons {
+          border-radius: 50%;
+          width: 36px;
+          height: 36px;
+          display: inline-block;
+          margin-left: 36px;
+
+          a {
+            display: block;
+            height: 100%;
+          }
+        }
+
+        .eighteen {
+          background: #c50000;
+          position: relative;
+          display: inline-block;
+
+          span {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: "Arial", " Helvetica", sans-serif;
+            color: white;
+            @extend %center;
+          }
+        }
+
+        .facebook {
+          background: $linear;
+          position: relative;
+
+          svg {
+            @extend %center;
+            font-size: 28px;
+
+            path {
+              fill: $blackish;
+            }
+          }
+        }
+
+        .telegram {
+          background: $linear;
+          position: relative;
+
+          svg {
+            @extend %center;
+            font-size: 28px;
+
+            path {
+              fill: $blackish;
+            }
+          }
+        }
+      }
+    }
+  }
+}

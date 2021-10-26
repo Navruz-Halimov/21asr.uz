@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Century';
+    src: url('../font/Century.woff2') format('woff2'),
+        url('../font/Century.woff') format('woff'),
+        url('../font/Century.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../font/Montserrat-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../font/Montserrat-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../font/Montserrat-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../font/Montserrat-Regular.woff") format("woff");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ITC Franklin Gothic Std';
+    src: url('../font/ITCFranklinGothicStd-Book.woff2') format('woff2'),
+        url('../font/ITCFranklinGothicStd-Book.woff') format('woff'),
+        url('../font/ITCFranklinGothicStd-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../font/SFProText-Regular.woff2') format('woff2'),
+        url('../font/SFProText-Regular.woff') format('woff'),
+        url('../font/SFProText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Impact';
+    src: url('../font/Impact.woff2') format('woff2'),
+        url('../font/Impact.woff') format('woff'),
+        url('../font/Impact.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PTSerif';
+    src: url("../font/PTSerif-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PTSerif';
+    src: url("../font/PTSerif-Regular.woff") format("woff");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PTSerif';
+    src: url("../font/PTSerif-Italic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic
+}
+
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../font/NotoSans-Regular.woff2') format('woff2'),
+        url('../font/NotoSans-Regular.woff') format('woff'),
+        url('../font/NotoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

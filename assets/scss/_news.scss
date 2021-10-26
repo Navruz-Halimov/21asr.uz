@@ -1,0 +1,162 @@
+//news//
+.news-container {
+  border-bottom: 1px solid rgba(153, 153, 153, 0.7);
+}
+
+.news__wrapper {
+  margin: 23px auto 17px;
+  max-width: 320px;
+  display: block;
+  width: 100%;
+}
+
+.news__item {
+  transition: all 0.3s linear;
+
+
+  .overlay {
+    background: rgba(0,0,0,0.3);
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      height: 40px !important;
+      width: 40px !important;
+      position: absolute;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+  &:hover .news__view-link-title,
+  &:hover .news__content-title p {
+    color: #003BB3;
+    text-decoration: underline;
+  }
+
+  .news__item-heading {
+    font-family: $Montserrat;
+    @include textWrapper(3);
+    font-size: 14px;
+    color: #151522;
+  }
+
+  .news__item-img-wrap {
+    max-width: 342px;
+    height: 205px;
+    width: 100%;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .news__content {
+    margin-top: 5px;
+    font-family: "ITC Franklin Gothic Std";
+    @include textWrapper(3);
+
+    &-title-mobile {
+      font-family: $Montserrat;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: bold;
+      color: #000;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #007bff;
+        text-decoration: none;
+      }
+    }
+
+    &-title {
+      font-family: $Montserrat;
+      font-size: 14px;
+      line-height: 19px;
+      color: #000;
+      transition: all 0.3s ease;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: none;
+        color: #003BB3;
+      }
+    }
+  }
+}
+
+.news__content-meta {
+  margin-top: 7px;
+  text-align: left;
+  font-family: $Protext;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #999999;
+
+  &-calendar {
+    margin-right: 5px;
+    padding-left: 18px;
+    background-repeat: no-repeat;
+    background-image: url("../image/news/calendar.svg");
+  }
+
+  &-time {
+    margin-right: 10px;
+    padding-left: 21px;
+    background: url("../image/news/time.svg") no-repeat center left;
+    background-size: contain;
+  }
+
+  &-view {
+    padding-left: 25px;
+    background: url("../image/index/view.svg") no-repeat;
+    background-size: contain;
+  }
+}
+.news__more {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  align-items: center;
+  background: #313131;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  &.nuqtai__btn{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    margin-bottom: 0 !important;
+  }
+  &:hover {
+    background-color: rgba(49, 49, 49, 0.9);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &-btn {
+    width: 100%;
+    @extend %fontColor;
+    font-family: $Montserrat;
+    font-size: 16px;
+    padding: 2px 0 5px 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

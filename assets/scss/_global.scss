@@ -1,0 +1,332 @@
+$blackish: #313131;
+$linear: linear-gradient(90deg, #9B6618 0%, #F6DE6E 10.45%, #BB862E 27.6%, #E0B64C 56.48%, #FAECBA 80.85%, #AF721E 100%);
+$white: #FFFFFF;
+$padding147: 147px;
+$padding73: 73px;
+$padding15: 15px;
+
+
+$Montserrat:'Montserrat';
+$Franklin:'ITC Franklin Gothic Std';
+$Protext: 'SF Pro Text';
+$Impact:'Impact';
+$Ptserif:'PT Serif';
+$Century:'Century';
+$Notosans:'Noto Sans';
+
+%fullWidth {
+  max-width: 1440px;
+  margin: auto;
+  width: 100%;
+}
+
+%center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%fontColor {
+  background: $linear;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+%language {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: $linear !important;
+  padding: 0;
+  font-family: $Montserrat;
+  color: $blackish;
+  margin-right: 15px;
+  margin-left: 30px;
+
+  &:last-child {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@mixin textWrapper($property) {
+  display: -webkit-box !important;
+  -webkit-line-clamp: $property !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: break-all !important;
+}
+
+@mixin placeholder($variable) {
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $variable;
+    opacity: 1;
+    /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $variable;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $variable;
+  }
+}
+
+button {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+
+.moreButton {
+  width: 100% !important;
+  background: #313131 !important;
+  margin: 40px 15px 60px 15px !important;
+  padding: 4px 0px;
+  border-radius: 5px;
+  span {
+    font-size: 18px;
+    background: $linear;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.modal {
+  .modal-dialog {
+    max-width: 460px !important;
+    height: 260px;
+    display: flex !important;
+    margin: auto !important;
+
+    .modal-content {
+      max-width: 460px !important;
+      height: 260px;
+
+      .modal-body {
+        position: relative;
+        padding: 40px 30px;
+
+        .close {
+          position: absolute;
+          top: -73px;
+          right: -24px;
+          @extend %fontColor;
+
+          svg {
+            font-size: 26px;
+
+            path {
+              fill: $white;
+            }
+          }
+        }
+
+        p {
+          font-size: 24px;
+          font-family: 'Century';
+          text-align: center;
+          margin-bottom: 55px;
+        }
+
+        a {
+          display: block;
+          max-width: 170px;
+          margin: auto;
+          text-align: center;
+          font-weight: bold;
+          font-size: 18px;
+          font-family: 'Century';
+          background: $linear;
+          border-radius: 6px;
+          padding: 12px 32px;
+          text-decoration: none;
+          color: $blackish;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  $coin-diameter: 80px;
+  $coin-thickness: 5px;
+  $coin-color: #F6DE6E;
+  $edge-faces: 80;
+  $edge-face-length: 3.14*$coin-diameter/$edge-faces;
+  $turn-time: 8s;
+
+  .coin {
+    position: relative;
+    width: $coin-diameter;
+    height: $coin-diameter;
+    transform-style: preserve-3d;
+    animation: rotate3d $turn-time linear infinite;
+    transition: all .3s;
+    display: table-cell;
+  }
+
+  .coin__front,
+  .coin__back {
+    position: absolute;
+    width: $coin-diameter;
+    height: $coin-diameter;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $coin-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -$coin-diameter/2;
+      bottom: 100%;
+      display: block;
+      height: $coin-diameter/1.5;
+      width: $coin-diameter*2;
+      background: #fff;
+      opacity: 0.3;
+      animation: shine linear $turn-time/2 infinite;
+    }
+  }
+
+  .coin__front {
+    background-image: url(../image/navbar/front.png);
+    background-size: cover;
+    transform: translateZ($coin-thickness/2);
+  }
+
+  .coin__back {
+    background-image: url(../image/navbar/back.png);
+    background-size: cover;
+    transform: translateZ(-$coin-thickness/2) rotateY(180deg);
+  }
+
+  .coin__edge {
+  @for $i from 1 through $edge-faces {
+    div:nth-child(#{$i}) {
+      position: absolute;
+      height: $edge-face-length;
+      width: $coin-thickness;
+      background: darken($coin-color, (($i - $edge-faces/2) * ($i - $edge-faces/2)) / ($edge-faces*$edge-faces/4) * 100 * 0.7);
+      transform: translateY(#{$coin-diameter/2-$edge-face-length/2}) translateX(#{$coin-diameter/2-$coin-thickness/2}) rotateZ(360deg/$edge-faces*$i+90) translateX(#{$coin-diameter/2}) rotateY(90deg);
+    }
+  }
+  }
+
+  .coin__shadow {
+    position: absolute;
+    width: $coin-diameter;
+    height: $coin-thickness;
+    border-radius: 50%;
+    background: #000;
+    box-shadow: 0 0 $coin-thickness*5 $coin-thickness*5 #000;
+    opacity: 0.125;
+    transform: rotateX(90deg) translateZ(-$coin-diameter*1.1) scale(.5);
+  }
+
+  @keyframes rotate3d {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  $coin-diameter: 40px;
+  $coin-thickness: 5px;
+  $coin-color: #F6DE6E;
+  $edge-faces: 40;
+  $edge-face-length: 3.14*$coin-diameter/$edge-faces;
+  $turn-time: 8s;
+
+  .coin {
+    position: relative;
+    width: $coin-diameter;
+    height: $coin-diameter;
+    transform-style: preserve-3d;
+    animation: rotate3d $turn-time linear infinite;
+    transition: all .3s;
+    display: table-cell;
+  }
+
+  .coin__front,
+  .coin__back {
+    position: absolute;
+    width: $coin-diameter;
+    height: $coin-diameter;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $coin-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -$coin-diameter/2;
+      bottom: 100%;
+      display: block;
+      height: $coin-diameter/1.5;
+      width: $coin-diameter*2;
+      background: #fff;
+      opacity: 0.3;
+      animation: shine linear $turn-time/2 infinite;
+    }
+  }
+
+  .coin__front {
+    background-image: url(../image/navbar/front.png);
+    background-size: cover;
+    transform: translateZ($coin-thickness/2);
+  }
+
+  .coin__back {
+    background-image: url(../image/navbar/back.png);
+    background-size: cover;
+    transform: translateZ(-$coin-thickness/2) rotateY(180deg);
+  }
+
+  .coin__edge {
+  @for $i from 1 through $edge-faces {
+    div:nth-child(#{$i}) {
+      position: absolute;
+      height: $edge-face-length;
+      width: $coin-thickness;
+      background: darken($coin-color, (($i - $edge-faces/2) * ($i - $edge-faces/2)) / ($edge-faces*$edge-faces/4) * 100 * 0.7);
+      transform: translateY(#{$coin-diameter/2-$edge-face-length/2}) translateX(#{$coin-diameter/2-$coin-thickness/2}) rotateZ(360deg/$edge-faces*$i+90) translateX(#{$coin-diameter/2}) rotateY(90deg);
+    }
+  }
+  }
+
+  .coin__shadow {
+    position: absolute;
+    width: $coin-diameter;
+    height: $coin-thickness;
+    border-radius: 50%;
+    background: #000;
+    box-shadow: 0 0 $coin-thickness*5 $coin-thickness*5 #000;
+    opacity: 0.125;
+    transform: rotateX(90deg) translateZ(-$coin-diameter*1.1) scale(.5);
+  }
+
+  @keyframes rotate3d {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+}
